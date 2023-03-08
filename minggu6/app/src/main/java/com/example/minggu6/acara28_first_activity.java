@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -85,8 +86,7 @@ public class acara28_first_activity extends AppCompatActivity {
                     }
                 });
                 builder.create().show();
-            }
-        });
-        ((ArrayAdapter) ListView01.getAdapter().no)
+            }});
+        ListView01.getAdapter().notify();
     }
 }
