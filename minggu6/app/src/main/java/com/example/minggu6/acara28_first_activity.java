@@ -16,6 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
+
 public class acara28_first_activity extends AppCompatActivity {
     String[] daftar;
     ListView ListView01;
@@ -34,7 +36,7 @@ public class acara28_first_activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inte = new Intent(acara28_first_activity.this, acara28_second_activity.class);
+                Intent inte = new Intent(acara28_first_activity.this, acara28_buat_biodata.class);
                 startActivity(inte);
             }
         });
@@ -47,7 +49,7 @@ public class acara28_first_activity extends AppCompatActivity {
     public void RefreshList(){
         SQLiteDatabase db = dbcenter.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM biodata", null);
-        daftar = new String(cursor.getCount());
+        daftar = new String[cursor.getCount()];
         cursor.moveToFirst();
         for (int cc = 0; cc< cursor.getCount(); cc++){
             cursor.moveToPosition(cc);
@@ -87,6 +89,6 @@ public class acara28_first_activity extends AppCompatActivity {
                 });
                 builder.create().show();
             }});
-        ListView01.getAdapter().notify();
+        ((ArrayAdapter) ListView01.getAdapter()).notifyDataSetInvalidated();
     }
 }

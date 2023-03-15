@@ -14,10 +14,10 @@ public class DataHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE biodata(no integer primary key, nama text null, tgl text null, alamat text null);";
+        String sql = "CREATE TABLE biodata(no integer primary key, nama text null, tgl text null, jk text null, alamat text null);";
         Log.d("Data", "OnCreate" + sql);
         db.execSQL(sql);
-        sql = "INSERT INTO biodata (no, nama, tgl, jk, alamat) VALUES ('1', 'Daraiwan', 'Laki-laki', 'Indramayu');";
+        sql = "INSERT INTO biodata (no, nama, tgl, jk, alamat) VALUES ('1', 'Daraiwan', '1996-07-12','Laki-laki', 'Indramayu');";
         db.execSQL(sql);
     }
 

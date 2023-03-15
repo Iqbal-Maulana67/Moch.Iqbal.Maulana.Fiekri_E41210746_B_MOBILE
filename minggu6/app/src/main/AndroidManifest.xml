@@ -21,13 +21,12 @@
             android:exported="false" />
         <activity
             android:name=".acara28_buat_biodata"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Form Biodata Baru"/>
         <activity
             android:name=".acara28_lihat_biodata"
-            android:exported="false" />
-        <activity
-            android:name=".acara28_second_activity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Lihat Biodata"/>
         <activity
             android:name=".acara28_first_activity"
             android:exported="false" />
