@@ -26,7 +26,7 @@ public class acara23_activity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String nama = name.getText().toString();
-                    if (nama != ""){
+                    if (!nama.isEmpty()){
                         Intent i = new Intent(acara23_activity.this, acara23_second_activity.class);
                         i.putExtra(KEY_NAME, nama);
                         startActivity(i);
